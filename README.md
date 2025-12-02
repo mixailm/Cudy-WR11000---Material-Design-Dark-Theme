@@ -1,5 +1,5 @@
-# Cudy-WR11000---Material-Design-Dark-Theme
-Cudy WR11000 - Material Design Dark Theme
+# Cudy-WR11000---Material-Design-Dark-Theme</br></br>
+Cudy WR11000 - Material Design Dark Theme</br>
 Please comment if it works on other Cudy models' web ui.
 
 </br></br>
