@@ -1,0 +1,804 @@
+/* ============================================
+   CUDY ROUTER UNIVERSAL DARK THEME
+   Ubuntu Font Family - Material Design Dark Theme
+   Based on Material Design 2 Guidelines
+   
+   INSTALLATION: Use with the Stylish browser extension.
+   Apply to: URLs starting with http://192.168 or http://10.
+   ============================================ */
+
+/* Import Ubuntu Font */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+/* ============================================
+   ROOT VARIABLES - Material Design Dark Theme
+   ============================================ */
+:root {
+  /* Material Design Dark Theme Surfaces */
+  --md-elevation-00: #121212;
+  --md-elevation-01: #1e1e1e;
+  --md-elevation-02: #232323;
+  --md-elevation-03: #252525;
+  --md-elevation-04: #272727;
+  --md-elevation-06: #2c2c2c;
+  --md-elevation-08: #2e2e2e;
+  --md-elevation-12: #333333;
+  --md-elevation-16: #363636;
+  --md-elevation-24: #383838;
+  
+  /* Text Colors */
+  --md-text-high: rgba(255, 255, 255, 0.87);
+  --md-text-medium: rgba(255, 255, 255, 0.60);
+  --md-text-disabled: rgba(255, 255, 255, 0.38);
+  
+  /* Dividers & Borders */
+  --md-divider: rgba(255, 255, 255, 0.12);
+  --md-border-subtle: rgba(255, 255, 255, 0.08);
+  
+  /* Accent Colors */
+  --accent-blue: #90caf9;
+  --accent-blue-hover: #bbdefb;
+  --accent-green: #81c784;
+  --accent-yellow: #fff176;
+  --accent-red: #e57373;
+  
+  /* Component Colors */
+  --input-bg: #1e1e1e;
+  --input-border: rgba(255, 255, 255, 0.12);
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+* {
+  font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* Preserve icon fonts - DO NOT apply Ubuntu font to icons */
+.icon,
+.fa,
+[class^="icon-"],
+[class*=" icon-"],
+[class^="fa-"],
+[class*=" fa-"] {
+  font-family: "icon", "FontAwesome" !important;
+}
+
+body {
+  background-color: var(--md-elevation-00) !important;
+  color: var(--md-text-high) !important;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   HEADER & NAVIGATION - Remove black bars
+   ============================================ */
+header,
+.header,
+.navbar,
+.navbar-default,
+.navbar-inverse,
+body .navbar-inverse.navbar-static-top {
+  background-color: var(--md-elevation-00) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--md-divider) !important;
+}
+
+.navbar-inverse {
+  background-color: var(--md-elevation-00) !important;
+  border-color: var(--md-divider) !important;
+}
+
+.navbar-brand {
+  color: var(--md-text-high) !important;
+}
+
+body .navbar-nav > li > a,
+body .navbar-default .navbar-nav > li > a {
+  color: var(--md-text-medium) !important;
+  background-color: transparent !important;
+}
+
+body .navbar-nav > li > a:hover,
+body .navbar-nav > li > a:focus,
+body .navbar-default .navbar-nav > li > a:hover {
+  color: var(--md-text-high) !important;
+  background-color: var(--md-elevation-04) !important;
+}
+
+body .navbar-nav > .active > a,
+body .navbar-default .navbar-nav > .active > a,
+body .navbar-default .navbar-nav > .active > a:hover,
+body .navbar-default .navbar-nav > .active > a:focus {
+  background-color: var(--md-elevation-04) !important;
+  color: var(--accent-blue) !important;
+}
+
+/* ============================================
+   FOOTER - Remove black bar
+   ============================================ */
+footer,
+.footer,
+body .footer.navbar-fixed-bottom,
+body .footer.hidden-xs {
+  background-color: var(--md-elevation-00) !important;
+  color: var(--md-text-medium) !important;
+  border-top: 1px solid var(--md-divider) !important;
+}
+
+footer a,
+.footer a {
+  color: var(--accent-blue) !important;
+}
+
+footer span,
+.footer span {
+  color: var(--md-text-medium) !important;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--md-text-high) !important;
+  font-weight: 500;
+}
+
+p, span, label, div {
+  color: var(--md-text-medium);
+}
+
+small, .small {
+  color: var(--md-text-disabled) !important;
+}
+
+a {
+  color: var(--accent-blue) !important;
+}
+
+a:hover {
+  color: var(--accent-blue-hover) !important;
+}
+
+/* Legend elements */
+body legend {
+  color: var(--md-text-high) !important;
+  border-bottom: 1px solid var(--md-divider) !important;
+}
+
+/* ============================================
+   PANELS - Fix bright colors
+   ============================================ */
+body .panel,
+body .panel-default,
+body .panel-primary {
+  background-color: var(--md-elevation-01) !important;
+  border: 1px solid var(--md-divider) !important;
+  border-radius: 4px !important;
+}
+
+body .panel-heading,
+body .panel-primary > .panel-heading {
+  background-color: var(--md-elevation-04) !important;
+  border-bottom: 1px solid var(--md-divider) !important;
+  color: var(--md-text-high) !important;
+  border-color: var(--md-divider) !important;
+}
+
+body .panel-title {
+  color: var(--md-text-high) !important;
+  font-weight: 500 !important;
+}
+
+body .panel-body {
+  background-color: var(--md-elevation-01) !important;
+  color: var(--md-text-medium) !important;
+}
+
+body .panel-footer {
+  background-color: var(--md-elevation-02) !important;
+  border-top: 1px solid var(--md-divider) !important;
+}
+
+/* ============================================
+   ICON GRID - No Circles
+   ============================================ */
+.fa-stack .fa-circle,
+i.fa-circle.fa-stack-2x {
+  display: none !important;
+}
+
+.fa-stack .fa-inverse,
+i.fa-inverse.fa-stack-1x,
+.fa-stack i.icon {
+  color: var(--accent-blue) !important;
+  font-size: 48px !important;
+}
+
+body .btn.btn-link,
+body button.btn-link,
+body a.btn-link {
+  background: none !important;
+  border: none !important;
+  color: var(--md-text-medium) !important;
+  padding: 10px 15px !important;
+}
+
+body .btn.btn-link:hover,
+body button.btn-link:hover {
+  color: var(--md-text-high) !important;
+  background-color: var(--md-elevation-02) !important;
+  border-radius: 8px;
+}
+
+body .btn.btn-link:hover .fa-stack i.icon,
+body .btn.btn-link:hover i.fa-inverse {
+  color: var(--accent-blue-hover) !important;
+}
+
+/* Fix for Advanced button container */
+body .text-center[style*="background-color"],
+body div[style*="background-color:#f4f7fa"] {
+  background-color: var(--md-elevation-02) !important;
+}
+
+/* ============================================
+   FORMS & INPUTS - CRITICAL FIX FOR DROPDOWNS
+   ============================================ */
+
+/* Base input styling with MAXIMUM specificity */
+body .form-control,
+body input[type="text"].form-control,
+body input[type="password"].form-control,
+body input[type="email"].form-control,
+body input[type="number"].form-control,
+body textarea.form-control {
+  background-color: var(--input-bg) !important;
+  border: 1px solid var(--input-border) !important;
+  color: var(--md-text-high) !important;
+  border-radius: 4px !important;
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  height: auto !important;
+  min-height: 34px !important;
+}
+
+/* CRITICAL: Select dropdown fix with ultra-high specificity */
+body select.form-control,
+body .modal-body select.form-control,
+body .input-group select.form-control,
+html body select[name*="cbid"].form-control,
+html body select[id*="cbid"].form-control,
+html body select[id="luci_language"].form-control,
+html body .form-group select.form-control,
+html body div select.form-control {
+  background-color: var(--input-bg) !important;
+  border: 1px solid var(--input-border) !important;
+  color: var(--md-text-high) !important;
+  border-radius: 4px !important;
+  padding: 10px 36px 10px 14px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  height: auto !important;
+  min-height: 34px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%2390caf9" d="M6 9L1 4h10z"/></svg>') !important;
+  background-repeat: no-repeat !important;
+  background-position: right 12px center !important;
+  background-size: 12px !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+}
+
+/* Fix input-group layout */
+body .input-group {
+  display: flex !important;
+  width: 100% !important;
+}
+
+body .input-group .form-control {
+  flex: 1 1 auto !important;
+  width: auto !important;
+}
+
+body .input-group-addon {
+  flex-shrink: 0 !important;
+  background-color: var(--md-elevation-04) !important;
+  border-color: var(--input-border) !important;
+  color: var(--md-text-medium) !important;
+}
+
+/* Focus states */
+body .form-control:focus,
+body select.form-control:focus {
+  background-color: var(--md-elevation-04) !important;
+  border-color: var(--accent-blue) !important;
+  color: var(--md-text-high) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Placeholder text */
+body .form-control::placeholder {
+  color: var(--md-text-disabled) !important;
+}
+
+/* Labels */
+body .form-group label,
+body label {
+  color: var(--md-text-medium) !important;
+  font-weight: 500 !important;
+}
+
+/* Select options */
+body select option {
+  background-color: var(--md-elevation-08) !important;
+  color: var(--md-text-high) !important;
+  padding: 8px 12px !important;
+}
+
+/* Fix modal width for login */
+body .modal-dialog.modal-sm {
+  width: 450px !important;
+  max-width: 90vw !important;
+}
+
+/* ============================================
+   TOGGLE SWITCHES - Better visibility
+   Fixed sizing and appearance
+   ============================================ */
+body .toggle,
+body .switch,
+body input[type="checkbox"]:not(.fa):not(.icon),
+body .cbi-checkbox,
+body input[type="checkbox"][data-toggle="toggle"],
+body .bootstrap-switch {
+  position: relative !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 52px !important;
+  min-width: 52px !important;
+  height: 28px !important;
+  background-color: var(--md-elevation-08) !important;
+  border: 2px solid var(--md-divider) !important;
+  border-radius: 14px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  outline: none !important;
+  vertical-align: middle !important;
+  display: inline-block !important;
+  margin: 0 !important;
+}
+
+body .toggle::before,
+body .switch::before,
+body input[type="checkbox"]:not(.fa):not(.icon)::before,
+body .cbi-checkbox::before {
+  content: '' !important;
+  position: absolute !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+  background-color: var(--md-text-disabled) !important;
+  top: 2px !important;
+  left: 2px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Checked/ON state */
+body .toggle:checked,
+body .switch:checked,
+body input[type="checkbox"]:not(.fa):not(.icon):checked,
+body .cbi-checkbox:checked {
+  background-color: rgba(144, 202, 249, 0.5) !important;
+  border-color: var(--accent-blue) !important;
+}
+
+body .toggle:checked::before,
+body .switch:checked::before,
+body input[type="checkbox"]:not(.fa):not(.icon):checked::before,
+body .cbi-checkbox:checked::before {
+  background-color: var(--accent-blue) !important;
+  left: 26px !important;
+}
+
+body .toggle:hover,
+body .switch:hover,
+body input[type="checkbox"]:not(.fa):not(.icon):hover {
+  border-color: var(--md-divider) !important;
+}
+
+body .toggle:checked:hover,
+body .switch:checked:hover,
+body input[type="checkbox"]:not(.fa):not(.icon):checked:hover {
+  border-color: var(--accent-blue-hover) !important;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+body .btn {
+  border-radius: 4px !important;
+  padding: 10px 24px !important;
+  font-weight: 500 !important;
+  border: none !important;
+  transition: all 0.2s ease;
+}
+
+body .btn-primary {
+  background-color: var(--accent-blue) !important;
+  color: var(--md-elevation-00) !important;
+}
+
+body .btn-primary:hover {
+  background-color: var(--accent-blue-hover) !important;
+}
+
+body .btn-success {
+  background-color: var(--accent-green) !important;
+  color: var(--md-elevation-00) !important;
+}
+
+body .btn-warning {
+  background-color: var(--accent-yellow) !important;
+  color: var(--md-elevation-00) !important;
+}
+
+body .btn-danger {
+  background-color: var(--accent-red) !important;
+  color: var(--md-elevation-00) !important;
+}
+
+body .btn-default,
+body .btn-secondary,
+body .btn.btn-default,
+body button.btn-default,
+body a.btn-default {
+  background-color: var(--md-elevation-08) !important;
+  color: var(--md-text-high) !important;
+  border: 1px solid var(--md-divider) !important;
+}
+
+body .btn-default:hover,
+body .btn-secondary:hover,
+body .btn.btn-default:hover {
+  background-color: var(--md-elevation-12) !important;
+  color: var(--md-text-high) !important;
+}
+
+/* Special button types */
+body .btn-qsetup {
+  background-color: var(--accent-green) !important;
+  color: var(--md-elevation-00) !important;
+}
+
+body .btn-muted,
+body .btn-block.btn-muted {
+  background-color: var(--md-elevation-08) !important;
+  color: var(--md-text-high) !important;
+  border: 1px solid var(--md-divider) !important;
+}
+
+body .btn-muted:hover {
+  background-color: var(--md-elevation-12) !important;
+}
+
+/* ============================================
+   TABLES - Fix text colors and striping
+   ============================================ */
+body .table {
+  background-color: var(--md-elevation-01) !important;
+  color: var(--md-text-medium) !important;
+}
+
+body .table thead th {
+  background-color: var(--md-elevation-04) !important;
+  color: var(--md-text-high) !important;
+  border-bottom: 1px solid var(--md-divider) !important;
+  font-weight: 500 !important;
+}
+
+body .table tbody tr {
+  border-bottom: 1px solid var(--md-divider) !important;
+}
+
+body .table tbody tr:hover {
+  background-color: var(--md-elevation-02) !important;
+}
+
+body .table tbody td {
+  color: var(--md-text-medium) !important;
+  border-top: none !important;
+}
+
+/* Striped tables */
+body .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: var(--md-elevation-00) !important;
+}
+
+body .table-striped > tbody > tr:nth-of-type(even) {
+  background-color: var(--md-elevation-02) !important;
+}
+
+/* Table text inside paragraphs */
+body .table p,
+body .table .form-control-static {
+  color: var(--md-text-medium) !important;
+}
+
+/* Table text utilities */
+body .table .text-success,
+body .table th.text-success {
+  color: var(--accent-green) !important;
+}
+
+body .table .text-warning {
+  color: var(--accent-yellow) !important;
+}
+
+body .table .text-danger {
+  color: var(--accent-red) !important;
+}
+
+body .table .text-info {
+  color: var(--accent-blue) !important;
+}
+
+/* ============================================
+   MODALS - Better hierarchy
+   ============================================ */
+body .modal-content {
+  background-color: var(--md-elevation-24) !important;
+  border: none !important;
+  border-radius: 4px !important;
+}
+
+body .modal-header {
+  background-color: var(--md-elevation-24) !important;
+  border-bottom: 1px solid var(--md-divider) !important;
+  color: var(--md-text-high) !important;
+}
+
+body .modal-title,
+body h4.modal-title {
+  color: var(--md-text-high) !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+}
+
+body .modal-body {
+  background-color: var(--md-elevation-24) !important;
+  color: var(--md-text-medium) !important;
+}
+
+body .modal-body p,
+body .modal-body li,
+body .modal-body span,
+body .modal-body div {
+  color: var(--md-text-medium) !important;
+}
+
+body .modal-footer {
+  background-color: var(--md-elevation-24) !important;
+  border-top: 1px solid var(--md-divider) !important;
+}
+
+/* Close button */
+body .close,
+body button.close {
+  color: var(--md-text-high) !important;
+  opacity: 0.7 !important;
+  text-shadow: none !important;
+  font-size: 28px !important;
+}
+
+body .close:hover,
+body button.close:hover {
+  color: var(--md-text-high) !important;
+  opacity: 1 !important;
+}
+
+/* ============================================
+   ALERTS
+   ============================================ */
+body .alert-info {
+  background-color: rgba(144, 202, 249, 0.15) !important;
+  color: var(--accent-blue) !important;
+  border: none !important;
+}
+
+body .alert-success {
+  background-color: rgba(129, 199, 132, 0.15) !important;
+  color: var(--accent-green) !important;
+  border: none !important;
+}
+
+body .alert-warning {
+  background-color: rgba(255, 241, 118, 0.15) !important;
+  color: var(--accent-yellow) !important;
+  border: none !important;
+}
+
+body .alert-danger {
+  background-color: rgba(229, 115, 115, 0.15) !important;
+  color: var(--accent-red) !important;
+  border: none !important;
+}
+
+/* ============================================
+   DROPDOWNS
+   ============================================ */
+body .dropdown-menu {
+  background-color: var(--md-elevation-08) !important;
+  border: none !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6) !important;
+}
+
+body .dropdown-menu > li > a {
+  color: var(--md-text-medium) !important;
+}
+
+body .dropdown-menu > li > a:hover {
+  background-color: var(--md-elevation-12) !important;
+  color: var(--md-text-high) !important;
+}
+
+/* ============================================
+   BREADCRUMBS - Fix bright colors
+   ============================================ */
+body .breadcrumb {
+  background-color: var(--md-elevation-02) !important;
+  border: 1px solid var(--md-divider) !important;
+  border-radius: 4px !important;
+  padding: 12px 20px !important;
+}
+
+body .breadcrumb > li {
+  color: var(--md-text-medium) !important;
+}
+
+body .breadcrumb > li + li:before {
+  color: var(--md-text-disabled) !important;
+  content: "/\00a0" !important;
+  padding: 0 5px !important;
+}
+
+body .breadcrumb > li > a {
+  color: var(--accent-blue) !important;
+}
+
+body .breadcrumb > li > a:hover {
+  color: var(--accent-blue-hover) !important;
+}
+
+body .breadcrumb > .active {
+  color: var(--md-text-medium) !important;
+}
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--md-elevation-00);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-elevation-12);
+  border-radius: 6px;
+  border: 2px solid var(--md-elevation-00);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-elevation-16);
+}
+
+/* ============================================
+   TABS & NAVIGATION PILLS
+   ============================================ */
+body .nav-tabs,
+body .nav-pills {
+  border-bottom: 1px solid var(--md-divider) !important;
+  background-color: transparent !important;
+}
+
+body .nav-tabs > li > a,
+body .nav-pills > li > a {
+  color: var(--md-text-medium) !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 4px 4px 0 0 !important;
+  padding: 12px 20px !important;
+}
+
+body .nav-tabs > li > a:hover,
+body .nav-pills > li > a:hover {
+  color: var(--md-text-high) !important;
+  background-color: var(--md-elevation-04) !important;
+}
+
+body .nav-tabs > li.active > a,
+body .nav-tabs > li.active > a:hover,
+body .nav-tabs > li.active > a:focus,
+body .nav-pills > li.active > a,
+body .nav-pills > li.active > a:hover {
+  color: var(--md-text-high) !important;
+  background-color: var(--md-elevation-04) !important;
+  border: none !important;
+  border-bottom: 2px solid var(--accent-blue) !important;
+}
+
+/* Tab panes */
+body .tab-pane,
+body .tab-content {
+  background-color: transparent !important;
+  color: var(--md-text-medium) !important;
+}
+
+/* White button in tabs */
+body .nav-tabs .btn,
+body .btn.active {
+  color: var(--md-text-high) !important;
+  background-color: var(--md-elevation-04) !important;
+}
+
+/* ============================================
+   VERTICAL SIDEBAR NAVIGATION
+   ============================================ */
+body .nav-stacked > li > a,
+body .nav.nav-stacked > li > a {
+  color: var(--md-text-medium) !important;
+  background-color: transparent !important;
+  border-radius: 4px !important;
+  padding: 12px 16px !important;
+  margin-bottom: 4px !important;
+}
+
+body .nav-stacked > li > a:hover,
+body .nav.nav-stacked > li > a:hover {
+  color: var(--md-text-high) !important;
+  background-color: var(--md-elevation-04) !important;
+}
+
+body .nav-stacked > li.active > a,
+body .nav.nav-stacked > li.active > a,
+body .nav-stacked > li.active > a:hover {
+  color: var(--md-text-high) !important;
+  background-color: var(--accent-blue) !important;
+}
+
+/* Sidebar icons and text */
+body .nav-stacked i,
+body .nav-stacked .icon {
+  color: inherit !important;
+}
+
+/* ============================================
+   TEXT UTILITIES
+   ============================================ */
+body .text-muted {
+  color: var(--md-text-disabled) !important;
+}
+
+body .text-primary {
+  color: var(--accent-blue) !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  body .panel-body {
+    padding: 16px !important;
+  }
+  
+  body .btn {
+    padding: 8px 16px !important;
+  }
+}
